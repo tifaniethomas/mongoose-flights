@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const movieSchema = new mongoose.Schema({
-  airline: {type: String, enum: ['American', 'Southwest', 'United', 'British Airways', 'KLM'], required: true},
-  airport: { type: String, enum: ['STL', 'SPF', 'MCI', 'MEM']},
+  airline: {type: String, enum: ['American', 'Southwest', 'United', 'BA', 'KLM'], required: true},
+  airport: { type: String, enum: ['STL', 'SGF', 'MCI', 'MEM']},
   flightNo: { type: Number, required: true, min: 10, max:9999},
   departs: {type: [Date], default: function() {
     const date = new Date()

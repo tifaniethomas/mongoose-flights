@@ -1,2 +1,32 @@
 <%- include('../partials/header') %>
+
+<h2>Enter a New Flight</h2>
+<form action="/flights" method="POST">
+  <label>Airline:
+    <select name="airline">
+        <option value="American">American</option>
+        <option value="Southwest">Southwest</option>
+        <option value="United">United</option>
+        <option value="BA">BA</option>
+        <option value="KLM">KLM</option>
+      </select>
+  </label><br>
+  <label>Airport:
+      <select name="airport">
+        <option value="STL">STL - St. Louis Lambert International Airport</option>
+        <option value="SGF">SGF - Springfield-Branson National Airport</option>
+        <option value="MCI">MCI - Kansas City International Airport</option>
+        <option value="MEM">MEM - Memphis International Airport</option>
+      </select>
+    </label><br>
+    <label>Flight Number:
+      <input type="number" name="flightNo">
+  </label><br>
+  <label>Departs:
+    <input type="date" name="departs">
+  </label><br>
+  <button type="submit">Add Movie</button>
+</form>
+<p><%= errorMsg %></p>
+
 <%- include('../partials/footer') %>
