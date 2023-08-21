@@ -1,6 +1,6 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Roboto Mono', monospace;
   background-color: lightgray;
 }
 
@@ -12,10 +12,16 @@ table {
   width: 100%;
   background-color: blanchedalmond;
   text-align: center;
+  border-color: gray;
+  border-style: outset;
 }
 
 th {
   background-color: blue;
   color: blanchedalmond;
   padding: 1vmin;
+}
+
+.late {
+  color: red;
 }

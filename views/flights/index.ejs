@@ -16,7 +16,11 @@
         <td><%= flight.airline %></td>
         <td><%= flight.airport %></td>
         <td><%= flight.flightNo %></td>
-        <td><%= flight.departs %></td>
+        <% if (flight.departs < new Date()) { %>
+          <td class='late'><%= flight.departs.toLocaleString() %></td>
+          <%} else {%>
+          <td><%= flight.departs.toLocaleString() %></td>
+          <% } %>
       </tr>
     <% }); %>
   </tbody>
