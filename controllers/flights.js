@@ -9,11 +9,11 @@ module.exports = {
 
 async function index(req, res) {
     const flights = await Flight.find({}).sort({departs: 'asc'})
-    res.render('flights/index', { flights })
+    res.render('flights/index', { title: 'All Flights', flights })
 }
 
 function newFlight(req, res) {
-    res.render('flights/new', { errorMsg: '' })
+    res.render('flights/new', {title: "Add A Flight", errorMsg: '' })
 }
 
 
