@@ -14,19 +14,14 @@ const flightSchema = new Schema({
     const today = new Date()
     console.log(today.getFullYear())
     return today.setFullYear(today.getFullYear() + 1)}},
-  destinations: [destinationSchema]
+  destinations: [destinationSchema],
+  tickets: [{
+    type:Schema.Types.ObjectId,
+    ref: 'Ticket'
+  }]
   },
   {timestamps: true}
   )
-
-  const ticketSchema = new Schema({
-    seat: {type: String, match: /[A-F][1-9]\d?/},
-    price: {type: Number, min: 0},
-    flight: [{
-      type: Schema.Types.ObjectId,
-      ref: 'Flight'
-    }]
-  })
 
 
 // Compile the schema into a model and export it
