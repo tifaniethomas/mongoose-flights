@@ -35,7 +35,7 @@ async function create(req, res) {
 }
 
 async function show(req, res) {
-    const flight = await Flight.findById(req.params.id).populate('tickets')
-    const tickets = await Ticket.find({ _id: { $nin: flight.ticket }}).sort('seat')
-    res.render('flights/show', { title: 'Flight Detail', flight, tickets })
+    const flight = await Flight.findById(req.params.id)
+    const tickets = await Ticket.find({flight: req.params.id}).sort('seat')
+    res.render('flights/show', { title: 'Flight Detail', flight, tickets})
 }

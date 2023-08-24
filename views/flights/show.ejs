@@ -62,7 +62,29 @@
 </form>
 <br><br>
 
-<form action="/tickets/new">
+<H2>TICKETS</H2>
+<% if (tickets.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>SEAT</th>
+        <th>PRICE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% tickets.forEach(function(ticket) { %>
+        <tr>
+          <td><%= ticket.seat %></td>
+          <td>$<%= ticket.price %></td>
+        </tr>
+     <% }) %>
+    </tbody>
+  </table>
+  <% } else { %>
+    <h5>No Tickets Yet</h5>
+  <% } %>
+
+<form action="/flights/<%= flight._id %>/tickets/new">
   <input type="submit" value="Create a New Ticket" />
 </form>
 

@@ -1,17 +1,16 @@
 <%- include('../partials/header') %>
 
-<section id="ticket list">
-  <% tickets.forEach(function(ticket) { %>
-    <article class="badge"><%= ticket.name %></article>
-  <% }) %>
-</section>
+
 <br>
-<form id="add-ticket-form" action="/tickets" method="POST">
-  <label>Seat (Letter A-F, Number 1-9):</label>
+<form id="add-ticket-form" action="/flights/<%= flight._id %>/tickets" method="POST">
+  <label>Seat (Letter A-F, Number 10-99):</label>
   <input type="text" name="seat" required pattern="[A-F][1-9]\d?">
   <label>Price:</label>
   <input type="number" name="price" min="0">
+  <input type="hidden" value="<%= flight._id %>" name="flight">
   <input type="submit" value="Add Ticket">
 </form>
+<br>
+<a href="/flights/<%= flight._id %>">Back to Flight</a>
 
 <%- include('../partials/footer') %>
